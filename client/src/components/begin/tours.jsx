@@ -1,0 +1,31 @@
+import React from 'react'
+
+import CardTour from './card/tour.jsx'
+
+export default function Tours({proporcional}) {
+
+    return (
+        <div style={{width: '100%', height: 'auto', paddingTop: 120 / proporcional, paddingBottom: 120 / proporcional, paddingLeft: 150 / proporcional, paddingRight: 150 / proporcional}}>
+            <div style={{width: '100%', height: 'auto'}}>
+                <p style={{fontSize: 30 / proporcional, lineHeight: `${40 / proporcional}px`, marginBottom: 20 / proporcional, color: 'rgb(23, 43, 222)', cursor: 'default', fontWeight: 700, 
+                    fontFamily: 'Roboto, sans-serif', textAlign: 'center'}} >
+                    Explora los mejores Tours en el Perú 2024
+                </p>
+                <div style={{width: '100%', height: 'auto'}}>
+                    <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto', marginBottom: 50 / proporcional}}>
+                        <CardTour proporcional={proporcional}/>
+                        <CardTour proporcional={proporcional}/>
+                        <CardTour proporcional={proporcional}/>
+                        <CardTour proporcional={proporcional}/>
+                    </div>
+                    <div className='d-flex justify-content-between' style={{width: '100%', height: 'auto'}}>
+                        <CardTour proporcional={proporcional}/>
+                        <CardTour proporcional={proporcional}/>
+                        <CardTour proporcional={proporcional}/>
+                        <CardTour proporcional={proporcional}/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
