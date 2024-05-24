@@ -2,10 +2,18 @@ import React from 'react'
 
 import icono_shop_blue from '../../assets/iconos/icono_shop_blue_96.png'
 import icono_calendar_white from '../../assets/iconos/icono_calendar_white_96.png'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { set_open_menu_lateral_carrito } from '../../redux/actions/data'
 
-export default function ReservasCarritoTablet({proporcional}) {
+export default function ReservasCarritoCell({proporcional}) {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const agregar_carrito = () => {
+        dispatch (set_open_menu_lateral_carrito(true))
+    }
 
     return (
         <div style={{width: '100%', height: 'auto', marginBottom: 20 / proporcional}}>
@@ -32,16 +40,17 @@ export default function ReservasCarritoTablet({proporcional}) {
                         <div style={{width: '90%', height: 'auto'}}>
                             <div style={{width: '100%', height: 'auto'}}>
                                 <div className='d-flex rounded-pill justify-content-center' style={{width: '100%', height: 50 / proporcional, background: 'rgb(43, 23, 222)', cursor: 'pointer',
-                                    marginBottom: 20 / proporcional}}>
+                                    marginBottom: 20 / proporcional}}
+                                    onClick={() => navigate ('/tour/actividad/reservar')}>
                                     <img src={icono_calendar_white} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 15 / proporcional,
                                             marginBottom: 15 / proporcional, marginRight: 10 / proporcional}}/>
-                                    <p style={{fontSize: 20 / proporcional, lineHeight: `${50 / proporcional}px`, color: 'white', marginBottom: 0 / proporcional, fontWeight: 600}}
-                                        onClick={() => navigate ('/tour/actividad/reservar')}>
+                                    <p style={{fontSize: 20 / proporcional, lineHeight: `${50 / proporcional}px`, color: 'white', marginBottom: 0 / proporcional, fontWeight: 600}}>
                                         Reservar
                                     </p>
                                 </div>
                                 <div className='d-flex rounded-pill justify-content-center' style={{width: '100%', height: 50 / proporcional, background: 'white', cursor: 'pointer',
-                                    border: '1px solid rgb(23, 43, 222)'}}>
+                                    border: '1px solid rgb(23, 43, 222)'}}
+                                    onClick={() => agregar_carrito ()}>
                                     <img src={icono_shop_blue} style={{width: 20 / proporcional, height: 20 / proporcional, marginTop: 15 / proporcional,
                                             marginBottom: 15 / proporcional, marginRight: 10 / proporcional}}/>
                                     <p style={{fontSize: 20 / proporcional, lineHeight: `${50 / proporcional}px`, color: 'rgb(23, 43, 222)', marginBottom: 0 / proporcional, fontWeight: 600}}>

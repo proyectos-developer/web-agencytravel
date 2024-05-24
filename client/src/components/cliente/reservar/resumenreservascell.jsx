@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function ResumenReservas({proporcional}) {
+export default function ResumenReservasCell({proporcional}) {
 
     const [cantidad_deposito, setCantidadDeposito] = useState('')
 

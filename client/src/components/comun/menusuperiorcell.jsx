@@ -33,7 +33,8 @@ export default function MenuSuperiorCell({proporcional}) {
     }, [location.pathname.split('/')[1]])
 
     return (
-        <div className='position-relative' style={{width: '100%', height: 172 / proporcional, background: location.pathname.split ('/')[1] !== '' && location.pathname.split('/')[3] === undefined ? 'rgb(23, 43, 222)' : 'transparent', paddingLeft: 20 / proporcional, paddingRight: 20 / proporcional}}>
+        <div className='' style={{width: '100%', heigh: 172 / proporcional, paddingLeft: 20 / proporcional, paddingRight: 20 / proporcional,
+            background: (location.pathname.split ('/')[1] !== '' && location.pathname.split('/')[3] === undefined && location.pathname.split('/')[2] !== 'reservar') ? 'rgb(23, 43, 222)' : 'transparent', zIndex: 99999}}>
             <div style={{width: '100%', height: 86 / proporcional}}>
                 <div className='d-flex justify-content-end' style={{width: '100%', height: 86 / proporcional, paddingTop: 30 / proporcional, paddingBottom: 30 / proporcional}}>
                     <div style={{width: 26 / proporcional, height: 26 / proporcional, marginRight: 10 / proporcional}}>

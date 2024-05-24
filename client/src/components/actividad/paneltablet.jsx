@@ -10,8 +10,13 @@ import GaleriaTablet from './galeriatablet.jsx'
 import OpinionesTablet from './opinionestablet.jsx'
 import RecomendacionesTablet from './recomendacionestablet.jsx'
 import ActividadesTablet from './actividadestablet.jsx'
+import MenuLateralCarritoTablet from '../comun/menulateralcarritotablet.jsx'
+
+import { useSelector } from 'react-redux'
 
 export default function ActividadPanelTablet({proporcional}) {
+
+    const {open_menu_lateral_carrito} = useSelector(({data_actions}) => data_actions)
 
     return (
         <div style={{width: '100%', height: 'auto', paddingLeft: 60 / proporcional, paddingRight: 60 / proporcional, paddingTop: 50 / proporcional, paddingBottom: 50 / proporcional}}>
@@ -37,6 +42,11 @@ export default function ActividadPanelTablet({proporcional}) {
             <RecomendacionesTablet proporcional={proporcional}/>
             <div className='rounded-pill' style={{width: '100%', height: 2 / proporcional, background: '#efefef'}}/>
             <ActividadesTablet proporcional={proporcional}/>
+            {
+                open_menu_lateral_carrito ? (
+                    <MenuLateralCarritoTablet proporcional={proporcional}/>
+                ) : null
+            }
         </div>
     )
 }

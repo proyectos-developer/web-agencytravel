@@ -10,8 +10,13 @@ import Galeria from './galeria.jsx'
 import Opiniones from './opiniones.jsx'
 import Recomendaciones from './recomendaciones.jsx'
 import Actividades from './actividades.jsx'
+import MenuLateralCarrito from '../comun/menulateralcarrito.jsx'
+
+import { useSelector } from 'react-redux'
 
 export default function ActividadPanel({proporcional}) {
+
+    const {open_menu_lateral_carrito} = useSelector(({data_actions}) => data_actions)
 
     return (
         <div style={{width: '100%', height: 'auto', paddingLeft: 150 / proporcional, paddingRight: 150 / proporcional, paddingTop: 120 / proporcional, paddingBottom: 120 / proporcional}}>
@@ -37,6 +42,11 @@ export default function ActividadPanel({proporcional}) {
             <Recomendaciones proporcional={proporcional}/>
             <div className='rounded-pill' style={{width: '100%', height: 2 / proporcional, background: '#efefef'}}/>
             <Actividades proporcional={proporcional}/>
+            {
+                open_menu_lateral_carrito ? (
+                    <MenuLateralCarrito proporcional={proporcional}/>
+                ) : null
+            }
         </div>
     )
 }

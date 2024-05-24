@@ -15,6 +15,10 @@ import ActividadPanel from './components/actividad/panel.jsx'
 import ActividadPanelTablet from './components/actividad/paneltablet.jsx'
 import ActividadPanelCell from './components/actividad/panelcell.jsx'
 
+import AtraccionesTourPanel from './components/atracciones/panel.jsx'
+import AtraccionesTourPanelTablet from './components/atracciones/paneltablet.jsx'
+import AtraccionesTourPanelCell from './components/atracciones/panelcell.jsx'
+
 import ReservarTourPanel from './components/reservar/panel.jsx'
 import ReservarTourPanelTablet from './components/reservar/paneltablet.jsx'
 import ReservarTourPanelCell from './components/reservar/panelcell.jsx'
@@ -85,6 +89,10 @@ export default function App() {
                     <Route path='tour/actividad/reservar' element={width < 500 ? <ReservarTourPanelCell proporcional={499 / width}/> :
                                                                    width < 991 ? <ReservarTourPanelTablet proporcional={991 / width}/> :
                                                                                  <ReservarTourPanel proporcional={1920 / width}/>}/>
+
+                    <Route path='tour/atracciones/:atraccion' element={width < 500 ? <AtraccionesTourPanelCell proporcional={499 / width}/> :
+                                                                       width < 991 ? <AtraccionesTourPanelTablet proporcional={991 / width}/> :
+                                                                                     <AtraccionesTourPanel proporcional={1920 / width}/>}/>
 
                     <Route path='cliente/acceder' element={width < 500 ? <ClienteAccesoPanelCell proporcional={499 / width}/> :
                                                            width < 991 ? <ClienteAccesoPanelTablet proporcional={991 / width}/> :

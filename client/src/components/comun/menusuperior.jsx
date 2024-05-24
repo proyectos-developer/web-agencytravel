@@ -24,6 +24,7 @@ export default function MenuSuperior({proporcional}) {
 
     const [seleccion_menu, setSeleccionMenu] = useState ('')
     const [menu, setMenu] = useState('')
+    const [menu_perfil, setMenuPerfil] = useState (false)
 
     useEffect(() => {
         setMenu(location.pathname.split ('/')[1])
@@ -107,10 +108,12 @@ export default function MenuSuperior({proporcional}) {
                                 onClick={() => dispatch(set_screen_search(true))}/>
                             <img src={location.pathname.split ('/')[1] ? icono_profile_white : icono_profile_black} style={{width: 18 / proporcional, height: 18 / proporcional, marginTop: 4 / proporcional, marginBottom: 4 / proporcional,
                                 marginRight: 15 / proporcional, cursor: 'pointer'}}/>
-                            <div className='d-flex position-relative' style={{width: 41 / proporcional, height: 26 / proporcional}}>
-                                <img src={location.pathname.split('/')[1] ? icono_shop_white : icono_shop_black} style={{width: 18 / proporcional, height: 18 / proporcional, marginTop: 4 / proporcional, marginRight: 5 / proporcional}}/>
-                                <img src={location.pathname.split('/')[1] ? icono_down_white : icono_down_shop_black} style={{width: 18 / proporcional, height: 18 / proporcional, marginTop: 4 / proporcional, cursor: 'pointer'}}/>
-                                <div className='position-absolute' style={{width: 15 / proporcional, height: 15 / proporcional, left: 20 / proporcional, top: -7 / proporcional}}>
+                            <div className='d-flex position-relative' style={{width: 'auto', height: 26 / proporcional}}>
+                                <img src={location.pathname.split('/')[1] ? icono_shop_white : icono_shop_black} 
+                                    style={{width: 18 / proporcional, height: 18 / proporcional, marginTop: 4 / proporcional, marginRight: 5 / proporcional, cursor: 'pointer', marginBottom: 4 / proporcional}}/>
+                                <img src={location.pathname.split('/')[1] ? icono_down_white : icono_down_shop_black} 
+                                    style={{width: 18 / proporcional, height: 18 / proporcional, marginTop: 4 / proporcional, cursor: 'pointer', marginBottom: 4 / proporcional}}/>
+                                <div className='position-absolute' style={{width: 15 / proporcional, height: 15 / proporcional, left: 16 / proporcional, top: -7 / proporcional}}>
                                     <div className='rounded-circle' style={{width: 15 / proporcional, height: 15 / proporcional, background: 'red'}}>
                                         <p style={{fontSize: 14 / proporcional, lineHeight: `${15 / proporcional}px`, marginBottom: 0, color: location.pathname.split ('/')[1] ? 'white' :  'black', cursor: 'pointer', 
                                             fontWeight: 600, cursor: 'pointer', fontFamily: 'Roboto, sans-serif', textAlign: 'center'}}>

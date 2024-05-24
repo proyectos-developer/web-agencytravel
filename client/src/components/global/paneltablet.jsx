@@ -27,7 +27,7 @@ export default function GlobalPanelTablet ({proporcional}){
         <div className='position-relative' style={{width: '100%', height: '100%'}}>
             {
                 location.pathname.split ('/')[1] === '' || location.pathname.split('/')[3] !== undefined || 
-                    (location.pathname.split('/')[1] && location.pathname.split('/')[2] === 'acceder')? (
+                    (location.pathname.split('/')[1] && (location.pathname.split('/')[2] === 'acceder' || location.pathname.split('/')[2] === 'reservar'))? (
                     null
                 ) : (
                     <MenuSuperiorTablet proporcional={proporcional}/>

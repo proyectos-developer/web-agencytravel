@@ -64,7 +64,7 @@ export default function ClienteReservarPanel({proporcional}) {
                             ) : null
                         }
                     </div>
-                    <div style={{width: '34%', height: 'auto'}}>
+                    <div style={{width: '35%', height: 'auto'}}>
                         <div className='' style={{width: '100%', height: 'auto'}}>
                             <p style={{fontSize: 20 / proporcional, lineHeight: `${22 / proporcional}px`, marginBottom: 50 / proporcional, color: 'black', fontWeight: 600, 
                                 fontFamily: 'Roboto, sans-serif', textAlign: 'left', cursor: 'default'}} >
